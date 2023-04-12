@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hands-on</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- 要用icon時需連結 -->
+    <!-- demo https://alameda-demo.squarespace.com/ -->
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .oout{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+/*---------------------------header---------------------------------*/
+        .d1{
+            width: 33.3333333%;
+            /*display: flex;*/
+            /*border: 1px solid black;*/
+        }
+        h1{
+            text-align: center;        /*水平置中*/
+        }
+        .d2 {
+            height: 100%;            /*為了讓裡面的區塊能垂直置中*/
+            display: flex;
+            justify-content: start;
+            align-items: center;       /*垂直置中*/
+        }
+        #nn{
+            display: none;         /*list先隱藏*/
+        }
+        .d3{
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+        #f{
+            display: none;       /*兩個Icon先隱藏*/
+        }
+        .d3 i{
+            font-size: 1.25rem;    /*icon大小*/
+        }
+
+        @media screen and (min-width:992px){    /*響應式(螢幕大於992時觸發)*/
+            .d2 i{
+                display: none;           /*隱藏三條線icon*/
+            }
+            ul#nn{
+                height: 100%;
+                display: flex;
+                list-style: none;
+                align-items: center;
+            }
+            ul#nn li{
+                margin-right: 20px;
+            }
+            ul#nn a{
+                color: black;
+                text-decoration: none;    /*清單裝飾選擇*/
+            }
+            #f{
+                display: block;        /*讓隱藏的東西出現(先確認display)*/
+                padding-right: 10px;
+            }
+        }
+/*---------------------------header---------------------------------*/
+/*---------------------------nav------------------------------------*/
+        ul.n1{
+            width: 100%;
+            list-style: none;      /*清單前的圖示*/
+            display: flex;          /*常用屬性*/
+            justify-content: center;    /*清單底下元素水平置中*/
+            border-bottom: 2px solid rgb(176, 176, 176);  /*邊界屬性調整*/
+            padding-bottom: 20px;      
+        }
+        .n1 li{
+            padding-right: 10px;
+            padding-left: 10px;
+            
+        }
+        .n1 li:nth-child(2){              /*顯示中元素的左右邊界*/
+            border-left:2px solid rgb(197, 196, 196) ;  
+            border-right:2px solid rgb(197, 196, 196) ;
+        }
+/*---------------------------nav------------------------------------*/
+/*---------------------------section--------------------------------*/
+        .cloth{
+            margin: auto;       /*左右外邊界均分*/
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;    /*讓後面區塊能補上，好用的包裝法*/
+        }
+
+        .m1{
+            width: 100%;        /*先一行一張圖*/
+        }
+        img{
+            width: 100%;         /*讓圖片寬相符*/
+            /*object-fit: cover;*/
+        }
+        @media screen and (min-width:768px){    
+            .m1{
+                width: 25%;            /*變成四個一排*/
+                padding-right:5px;     /*讓圖片間有間隔*/
+                padding-left: 5px;
+                
+            }
+        }
+/*---------------------------section--------------------------------*/
+/*---------------------------footer---------------------------------*/
+        .ff{
+            width: 90%;
+            margin: auto;
+            text-align: center;
+        }
+        .f1{
+           margin: 30px;
+           
+        }
+        .f2{
+            display: inline-flex;
+            border: 2px solid black;
+            padding: 3px;
+        }
+        .f1 span{
+            text-decoration: underline;
+        }
+/*---------------------------footer---------------------------------*/
+/*---------------------------aside----------------------------------*/
+        aside{
+            background-color: rgb(49, 49, 49);
+            width: 235px;
+            height: 75px;
+            position: fixed;        /*將區塊固定於網頁上某個位置*/
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            color: #ffffff;
+            align-items: center;           /*區塊垂直對其*/
+        }
+        .a1{
+            font-size: 1.2rem;
+            margin-left: 20px;
+        }
+        .a2{
+            margin-left: 20px;
+            font-size: 0.7rem;
+        }
+        .a2 p{
+            color: darkgray;
+        }
+/*---------------------------aside----------------------------------*/
+    </style>
+</head>
+
+<!---------------------------------------------------------------------->
+
+<body>
+    <header>
+        <div class="oout">
+            <div class="d1">
+                <div class="d2">
+                    <i class="fa-solid fa-bars"><a href="#"></a></i>
+                    <ul id="nn">
+                        <li><a href="#"></a>Shop</li>
+                        <li><a href="#"></a>Lookbook</li>
+                        <li><a href="#"></a>About</li>
+                        <li><a href="#"></a>Contact</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d1">
+                <h1>Alameda</h1>
+            </div>
+            <div class="d1">
+                <div class="d3">
+                    <i class="fa-brands fa-instagram" id="f"><a href="#"></a></i>
+                    <i class="fa-brands fa-twitter" id="f"><a href="#"></a></i>
+                    <i class="fa-solid fa-cart-shopping"><a href="#"></a></i><span>0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+<!------------------------------>
+    <nav>
+        <div class="oout">
+            <ul class="n1">
+                <li><a href="#"></a>Tops</li>
+                <li><a href="#"></a>Bottom</li>
+                <li><a href="#"></a>Sale</li>
+            </ul>
+        </div>
+    </nav>
+<!------------------------------>
+    <section>
+        <div class="cloth">
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/1.jpeg" alt="">
+                </div>
+                <h3>cloth1</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/2.jpeg" alt="">
+                </div>
+                <h3>cloth2</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/3.jpeg" alt="">
+                </div>
+                <h3>cloth3</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/4.jpeg" alt="">
+                </div>
+                <h3>cloth4</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/5.jpeg" alt="">
+                </div>
+                <h3>cloth5</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/6.jpeg" alt="">
+                </div>
+                <h3>cloth6</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/7.jpeg" alt="">
+                </div>
+                <h3>cloth7</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/8.jpeg" alt="">
+                </div>
+                <h3>cloth8</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/9.jpeg" alt="">
+                </div>
+                <h3>cloth9</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/10.jpeg" alt="">
+                </div>
+                <h3>cloth10</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/11.jpeg" alt="">
+                </div>
+                <h3>cloth11</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/12.jpeg" alt="">
+                </div>
+                <h3>cloth12</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/13.jpeg" alt="">
+                </div>
+                <h3>cloth13</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/14.jpeg" alt="">
+                </div>
+                <h3>cloth14</h3>
+                <p>$50</p>
+            </div>
+            <div class="m1">
+                <div class="img">
+                    <img src="./alamada-imgs-main/15.jpeg" alt="">
+                </div>
+                <h3>cloth15</h3>
+                <p>$50</p>
+            </div>
+        </div>
+    </section>
+<!------------------------------>
+    <footer>
+        <div class="ff">
+            <div class="f1">
+                <h2>SS-20 Lookbook</h2>
+            </div>
+            <div class="f1">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+            <div class="f1">
+                <p>Sign up to receive news and updates</p>
+            </div>
+            <div class="f1">
+                <div class="f2">
+                    <p>Email Address</p>
+                </div>
+                <div class="f2">
+                    <p>Sign Up</p>
+                </div>
+            </div>
+            <div class="f1">
+                <p>Made with <span>Squarespace</span></p>
+            </div>
+        </div>
+    </footer>
+<!------------------------------>
+    <aside>
+        <div class="a1">
+            <i class="fa-solid fa-fingerprint"></i>
+        </div>
+        <div class="a2">
+            <div><h3>Create A Site Like This</h3></div>
+            <div><p>Free trial.Instant access</p></div>
+        </div>
+    </aside>
+</body>
+</html>
